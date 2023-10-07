@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Budget Tracker</title>
+        
+    </head>
+
+<Body>
+ <input type="file" id=""inpFile>
+ <button type="button" id="btnUpload">Upload</button>
+ <br>
+ <br>
+ <textarea style="width: 75%; height: 50%;"  id="resultText" placeholder="your pdf will appear here"></textarea>
+ <script>
+const inpFile = documnet.getElementById("inpFile");
+const btnUpload = documnet.getElementById("btnUpload");
+const resultText = documnet.getElementById("resultText");
+
+    btnUpload.addEventListner("click", () =>{
+        const formatData = new FormData();
+
+        formData.append("pdfFile", inpFile.files[0]);
+        
+        fetch("/extract-text", {
+            method: "post",
+            body: formData
+        }).then(response => {
+            return response.text();
+        }).then(extractedText => {
+            resultText.value = extractedText;
+        });
+    });
+ </script>
+</Body>
+
+
+
+
+
+</html>
