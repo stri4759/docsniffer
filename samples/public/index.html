@@ -4,20 +4,20 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Budget Tracker</title>
+        <title>document</title>
         
     </head>
 
-<Body>
+<body>
  <input type="file" id=""inpFile>
  <button type="button" id="btnUpload">Upload</button>
  <br>
  <br>
  <textarea style="width: 75%; height: 50%;"  id="resultText" placeholder="your pdf will appear here"></textarea>
  <script>
-const inpFile = documnet.getElementById("inpFile");
-const btnUpload = documnet.getElementById("btnUpload");
-const resultText = documnet.getElementById("resultText");
+const inpFile = document.getElementById("inpFile");
+const btnUpload = document.getElementById("btnUpload");
+const resultText = document.getElementById("resultText");
 
     btnUpload.addEventListner("click", () =>{
         const formatData = new FormData();
@@ -34,7 +34,7 @@ const resultText = documnet.getElementById("resultText");
         });
     });
  </script>
-</Body>
+</body>
 
 
 
